@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бриф собрания — праздник Дня народного единства</title>
+<style>
+  :root{
+    --ink:#2A2521; --paper:#F6F0E4; --card:#F3EBDC; --acc:#A0522D;
+    --acc2:#2F6B3A; --muted:#6F655B; --line:#D9CDB8; --warn-bg:#FBEFE9;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+    font-family:'PT Sans','Segoe UI',system-ui,Arial,sans-serif;
+    font-size:16px;line-height:1.55;}
+  body{padding:0 0 60px;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px;}
+  a{color:var(--acc);}
+
+  header.cover{background:linear-gradient(180deg,var(--card) 0%,var(--paper) 100%);
+    padding:40px 0 34px;border-bottom:3px solid var(--acc);}
+  .kicker{font-family:'Oswald','Segoe UI',Arial,sans-serif;font-weight:600;
+    font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);
+    margin:0 0 10px;}
+  h1{font-family:'Lora',Georgia,'Times New Roman',serif;font-weight:700;
+    font-size:30px;line-height:1.2;margin:0 0 10px;}
+  .lead{font-family:'Lora',Georgia,serif;font-style:italic;font-size:17px;
+    color:var(--muted);margin:0;max-width:640px;}
+  .meta{display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:20px;font-size:14px;color:var(--muted);}
+  .meta b{color:var(--ink);font-weight:700;}
+
+  section{padding:34px 0;}
+  section + section{border-top:1px solid var(--line);}
+  h2{font-family:'Lora',Georgia,serif;font-weight:700;font-size:22px;
+    margin:0 0 14px;display:flex;align-items:center;gap:10px;}
+  h2 .num{font-family:'Oswald',Arial,sans-serif;font-weight:600;color:#fff;
+    background:var(--acc);border-radius:50%;width:30px;height:30px;
+    display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex:none;}
+  h3{font-family:'Lora',Georgia,serif;font-weight:700;font-size:16.5px;
+    color:var(--acc);margin:22px 0 8px;}
+  p{margin:0 0 12px;}
+
+  ul.digest{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  ul.digest li{background:var(--card);border-radius:10px;padding:13px 16px 13px 34px;
+    position:relative;font-size:15px;}
+  ul.digest li::before{content:"";position:absolute;left:16px;top:19px;
+    width:8px;height:8px;border-radius:50%;background:var(--acc);}
+
+  .card{background:var(--card);border-radius:12px;padding:18px 20px;margin:14px 0;}
+  .decision{background:#EAF2EA;border-left:4px solid var(--acc2);border-radius:0 10px 10px 0;
+    padding:16px 20px;margin:14px 0;}
+  .decision .lbl{font-family:'Oswald',Arial,sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--acc2);margin-bottom:6px;}
+  .warn{background:var(--warn-bg);border-left:4px solid var(--acc);border-radius:0 10px 10px 0;
+    padding:16px 20px;margin:14px 0;}
+  .warn .lbl{font-family:'Oswald',Arial,sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:6px;}
+
+  .table-scroll{overflow-x:auto;margin:16px 0;border-radius:10px;}
+  table{width:100%;border-collapse:collapse;min-width:560px;font-size:14.5px;background:#fff;}
+  th{text-align:left;font-family:'Oswald',Arial,sans-serif;font-weight:600;font-size:11.5px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+    border-bottom:2px solid var(--ink);padding:10px 12px;background:var(--card);}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td.b{font-weight:700;}
+  .tag{display:inline-block;font-size:11.5px;font-family:'Oswald',Arial,sans-serif;
+    padding:2px 8px;border-radius:20px;background:var(--line);color:var(--ink);
+    font-weight:600;letter-spacing:.03em;}
+  .tag.ask{background:#FBEFE9;color:var(--acc);}
+  .tag.ok{background:#EAF2EA;color:var(--acc2);}
+
+  .flag{color:var(--acc);font-weight:700;}
+
+  svg{display:block;max-width:100%;height:auto;}
+  .diagram{background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:18px;margin:16px 0;}
+
+  .team-icons{display:flex;align-items:center;justify-content:center;gap:28px;
+    flex-wrap:wrap;margin:14px 0;}
+  .team-icons figure{margin:0;text-align:center;font-size:13px;color:var(--muted);}
+  .team-icons figcaption{margin-top:6px;}
+
+  footer{padding:30px 0 10px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);}
+  footer p{margin:0 0 6px;}
+
+  @media (max-width:560px){
+    h1{font-size:24px;} .lead{font-size:15.5px;} h2{font-size:19px;}
+    header.cover{padding:28px 0 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="kicker">Айхал · собрание по празднику 4 ноября</div>
+    <h1>День народного единства:<br>бриф по собранию общин</h1>
+    <p class="lead">Разбор двух аудиозаписей совещания в администрации — что решили
+      по спортивному фестивалю и по культурной части, что осталось открытым
+      и к каким срокам.</p>
+    <div class="meta">
+      <div>Записано: <b>8 октября 2026</b></div>
+      <div>Длительность: <b>≈ 48 минут</b> (две записи)</div>
+      <div>Подготовил: <b>Джарвис</b> по аудиозаписи Алёны Прасол</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2><span class="num">1</span>Коротко: что решили</h2>
+  <ul class="digest">
+    <li><b>Главное решение.</b> Команды общин формируются <b>не по национальности, а по
+      принадлежности к общине</b> — 1 мужчина + 1 женщина + 1 ребёнок от каждой, независимо
+      от того, какой он национальности. Решение принято единогласно.</li>
+    <li><b>Семь видов спорта</b> с составами и возрастом команд определены — таблица ниже.</li>
+    <li><b>«Весёлые старты» меняют формат.</b> В прошлом году конкурс провалился из-за
+      субъективного судейства (скакалки, обручи, тоннели) — в этом году будет простая
+      эстафета на скорость, без предметов. Разработку взял на себя главный судья.</li>
+    <li><b>«Перестрелка» — только для детей</b> 2009–2012 г.р., взрослых решили не допускать.</li>
+    <li><b>Культурная часть:</b> открытие — один номер от Дворца культуры, закрытие — от общин;
+      конкурс «Подворье» в этом году на тему единения народов; на закрытии общины обмениваются
+      небольшими национальными подарками между собой.</li>
+    <li><b>Фотозона нуждается в регламенте</b> по размеру и расстановке, чтобы соседние
+      общины не теснили друг друга — замер площадки поручили Алёне.</li>
+    <li><b>Награды главы посёлка:</b> по одному кандидату от каждой общины — до конца
+      следующей недели.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">2</span>Как устроен праздник</h2>
+  <div class="diagram">
+    <svg viewBox="0 0 820 230" xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="Схема праздника: спортивная и культурная части">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#D9CDB8"/>
+        </marker>
+      </defs>
+      <!-- row labels -->
+      <text x="10" y="55" font-family="Oswald,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1" fill="#A0522D">СПОРТ</text>
+      <text x="10" y="175" font-family="Oswald,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1" fill="#A0522D">КУЛЬТУРА</text>
+
+      <!-- sport row -->
+      <g font-family="PT Sans, Arial, sans-serif" font-size="12.5" fill="#2A2521">
+        <rect x="90" y="30" width="140" height="56" rx="10" fill="#F3EBDC" stroke="#D9CDB8"/>
+        <text x="160" y="54" text-anchor="middle">7 видов спорта</text>
+        <text x="160" y="70" text-anchor="middle" fill="#6F655B" font-size="11">составы по общинам</text>
+
+        <line x1="230" y1="58" x2="268" y2="58" stroke="#D9CDB8" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <rect x="270" y="30" width="150" height="56" rx="10" fill="#F3EBDC" stroke="#D9CDB8"/>
+        <text x="345" y="48" text-anchor="middle">Весёлые старты</text>
+        <text x="345" y="64" text-anchor="middle" fill="#6F655B" font-size="11">новый простой формат</text>
+        <text x="345" y="78" text-anchor="middle" fill="#6F655B" font-size="11">без предметов</text>
+
+        <line x1="420" y1="58" x2="458" y2="58" stroke="#D9CDB8" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <rect x="460" y="30" width="150" height="56" rx="10" fill="#F3EBDC" stroke="#D9CDB8"/>
+        <text x="535" y="54" text-anchor="middle">Канат — отдельно</text>
+        <text x="535" y="70" text-anchor="middle" fill="#6F655B" font-size="11">разминка + отдых ≥5 мин</text>
+
+        <line x1="610" y1="58" x2="648" y2="58" stroke="#D9CDB8" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <rect x="650" y="30" width="150" height="56" rx="10" fill="#EAF2EA" stroke="#BFD8C2"/>
+        <text x="725" y="54" text-anchor="middle" font-weight="700">Единым коллективом</text>
+        <text x="725" y="70" text-anchor="middle" fill="#2F6B3A" font-size="11">без травм, без споров</text>
+      </g>
+
+      <!-- culture row -->
+      <g font-family="PT Sans, Arial, sans-serif" font-size="12.5" fill="#2A2521">
+        <rect x="90" y="150" width="140" height="56" rx="10" fill="#F3EBDC" stroke="#D9CDB8"/>
+        <text x="160" y="174" text-anchor="middle">Открытие</text>
+        <text x="160" y="190" text-anchor="middle" fill="#6F655B" font-size="11">номер от Дворца культуры</text>
+
+        <line x1="230" y1="178" x2="268" y2="178" stroke="#D9CDB8" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <rect x="270" y="150" width="150" height="56" rx="10" fill="#F3EBDC" stroke="#D9CDB8"/>
+        <text x="345" y="168" text-anchor="middle">«Подворье» + фотозона</text>
+        <text x="345" y="184" text-anchor="middle" fill="#6F655B" font-size="11">тема года: единение</text>
+        <text x="345" y="198" text-anchor="middle" fill="#6F655B" font-size="11">народов</text>
+
+        <line x1="420" y1="178" x2="458" y2="178" stroke="#D9CDB8" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <rect x="460" y="150" width="150" height="56" rx="10" fill="#F3EBDC" stroke="#D9CDB8"/>
+        <text x="535" y="168" text-anchor="middle">Гала-концерт</text>
+        <text x="535" y="184" text-anchor="middle" fill="#6F655B" font-size="11">номер от каждой общины</text>
+
+        <line x1="610" y1="178" x2="648" y2="178" stroke="#D9CDB8" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <rect x="650" y="150" width="150" height="56" rx="10" fill="#EAF2EA" stroke="#BFD8C2"/>
+        <text x="725" y="168" text-anchor="middle" font-weight="700">Закрытие</text>
+        <text x="725" y="184" text-anchor="middle" fill="#2F6B3A" font-size="11">подарки между общинами</text>
+        <text x="725" y="198" text-anchor="middle" fill="#2F6B3A" font-size="11">+ награды главы</text>
+      </g>
+    </svg>
+  </div>
+  <p class="small" style="color:var(--muted);font-size:13.5px;">Спортивная и культурная часть
+    обсуждались как два отдельных блока одного праздника — именно в этом порядке и шло собрание.</p>
+</section>
+
+<section>
+  <h2><span class="num">3</span>Главное решение: команда — по общине, не по национальности</h2>
+  <p>Спор на собрании был именно вокруг этого: раньше заявки можно было прочитать так, что
+    у общины с большей численностью (например, русской) оказывалось в разы больше участников,
+    чем у малых общин. Главный судья предложил принцип, с которым согласились все:</p>
+  <div class="decision">
+    <div class="lbl">Решение собрания</div>
+    <p style="margin:0">От каждой общины — <b>3 участника: 1 мужчина, 1 женщина, 1 ребёнок</b>,
+      независимо от их национальности. Основание для участия в общине — не запись в паспорте,
+      а фактическая принадлежность: членство, уплата взносов, родственные связи. Человек может
+      представлять ту общину, в которой он состоит, даже если по происхождению принадлежит
+      к другому народу. Супруги могут выступать за одну и ту же общину вместе.</p>
+  </div>
+  <div class="team-icons">
+    <svg width="220" height="90" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="1 мужчина, 1 женщина, 1 ребёнок — одна команда общины">
+      <g fill="#A0522D">
+        <circle cx="40" cy="26" r="14"/>
+        <path d="M18 78 C18 54 62 54 62 78 Z"/>
+      </g>
+      <g fill="#6F655B">
+        <circle cx="110" cy="26" r="14"/>
+        <path d="M88 78 C88 54 132 54 132 78 Z"/>
+      </g>
+      <g fill="#2F6B3A">
+        <circle cx="178" cy="34" r="10"/>
+        <path d="M160 78 C160 60 196 60 196 78 Z"/>
+      </g>
+      <text x="40" y="100" text-anchor="middle" font-family="PT Sans,Arial" font-size="11" fill="#6F655B"></text>
+    </svg>
+  </div>
+  <p style="text-align:center;color:var(--muted);font-size:13.5px;margin-top:-6px;">
+    1 мужчина + 1 женщина + 1 ребёнок — одна заявка, одна община, любая национальность</p>
+  <p>Это касается и видов спорта с бо́льшим составом (волейбол, канат) — там принцип
+    «по заявке, не по паспорту» действует так же, просто команда больше.</p>
+</section>
+
+<section>
+  <h2><span class="num">4</span>Спортивный фестиваль: семь видов</h2>
+  <p>Программу в целом оставили прошлогоднюю, точное время и тренеров по каждому виду
+    обещали прислать отдельным положением позже. Ниже — составы команд и возраст, которые
+    прозвучали на собрании.</p>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Вид</th><th>Состав</th><th>Возраст</th><th>Замена</th><th>Особое</th></tr>
+    <tr>
+      <td class="b">Юниор-бол</td>
+      <td>4 на площадке + 2 на замене, любые мальчики и девочки</td>
+      <td>2013 г.р. и младше</td>
+      <td>входит в состав площадки</td>
+      <td>состав не меняется от прошлого года</td>
+    </tr>
+    <tr>
+      <td class="b">ФП <span class="tag ask">уточнить расшифровку</span></td>
+      <td>1 мужчина + 1 женщина + 1 мальчик + 1 девочка</td>
+      <td>2013 г.р. и младше</td>
+      <td>—</td>
+      <td>условия как в прошлом году</td>
+    </tr>
+    <tr>
+      <td class="b">Шашки</td>
+      <td>1 мужчина + 1 женщина + 1 ребёнок (мальчик или девочка)</td>
+      <td>2013 г.р. и младше</td>
+      <td>—</td>
+      <td>команда из трёх человек</td>
+    </tr>
+    <tr>
+      <td class="b">Волейбол</td>
+      <td>3 мужчины + 3 женщины</td>
+      <td>—</td>
+      <td>1 мужчина + 1 женщина, заранее по заявке</td>
+      <td>замена только из заявленных — чтобы не менять состав во время игры</td>
+    </tr>
+    <tr>
+      <td class="b">Перестрелка</td>
+      <td>3 мальчика + 3 девочки</td>
+      <td><b>2009–2012</b> г.р.</td>
+      <td>1 мальчик + 1 девочка</td>
+      <td class="flag">взрослых решили не допускать — только старшие дети</td>
+    </tr>
+    <tr>
+      <td class="b">Перетягивание каната</td>
+      <td>6 мужчин + 6 женщин</td>
+      <td>—</td>
+      <td>2 мужчины + 2 женщины, заранее по заявке</td>
+      <td class="flag">высокая травмоопасность — разминка обязательна, отдых между попытками не менее 5 минут</td>
+    </tr>
+    <tr>
+      <td class="b">Весёлые старты</td>
+      <td>формат разрабатывается</td>
+      <td>—</td>
+      <td>—</td>
+      <td>без предметов (скакалки, обручи, тоннели) — простая эстафета на скорость</td>
+    </tr>
+  </table>
+  </div>
+
+  <h3>Почему «весёлые старты» меняют</h3>
+  <p>В прошлом году конкурс закончился спором: тренеры включили элементы на технику
+    (скакалки, обручи, подлезание в туннель), а судейство в таких элементах неизбежно
+    субъективно — кто-то решил, что упражнение выполнено правильно, кто-то не согласился.
+    Из-за спора конкурс сняли совсем, что повлияло на итоговое 2–3 место одной из команд.</p>
+  <div class="warn">
+    <div class="lbl">Договорились</div>
+    <p style="margin:0">В этом году — только простые упражнения на скорость и выносливость
+      (бег, передача, эстафета), без предметов и без элементов на технику. Разработку берёт
+      на себя главный судья лично, по согласованию с тренерским составом.</p>
+  </div>
+
+  <h3>Канат: безопасность отдельно</h3>
+  <p>На канате в прошлом году были случаи травм — тянули без отдыха, несколько раз подряд.
+    Договорились: <b>обязательная разминка</b> и <b>отдых между попытками не менее пяти минут</b>.
+    Состав команды фиксируется заявкой заранее, чтобы нельзя было подменить всех участников
+    посередине соревнования.</p>
+
+  <h3>Где и когда тренироваться</h3>
+  <p>В этом году школьные залы попросить не получится — школы учатся в две смены, свой зал
+    почти всё время занят. Время тренировок распределит <b>Кирилл Николаевич</b>: предварительно
+    речь шла о вечерних часах после 21:00 в будни и об утренних часах в субботу-воскресенье;
+    возможно использовать второй зал (куда обычно ходят только борцы) — там предложили
+    тренироваться парами общин по договорённости. Точный график — <span class="tag ask">ждём от Кирилла Николаевича</span>.</p>
+</section>
+
+<section>
+  <h2><span class="num">5</span>Культурная часть</h2>
+
+  <h3>Открытие и закрытие</h3>
+  <p>Открывает праздник один номер от Дворца культуры — чтобы общины не перегружали себя
+    подготовкой сразу двух номеров. Закрытие — уже силами самих общин.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Идея на закрытие: обмен национальными подарками</h3>
+    <p>Каждая община готовит небольшое угощение на маленькой тарелочке, красиво оформленное
+      (например, татаро-башкирская община — чак-чак), и в конце праздника дарит его понравившемуся
+      участнику или болельщику <b>из другой общины</b> — в знак того, что праздник именно
+      про единство народов. Можно подарить кому угодно: ребёнку, болельщику, игроку, даже
+      главному судье. Как это точно впишут в сценарий закрытия — продумывают отдельно.</p>
+  </div>
+
+  <h3>Конкурс «Подворье»</h3>
+  <p>Ежегодный традиционный конкурс, тема которого меняется каждый год. В этом году тема —
+    единение народов. Что может входить в «подворье» общины: угощение и чай на общем столе,
+    фотозона с реквизитом (баннеры, фигуры, национальные головные уборы, шарики, фонарики
+    и подобное). Положение опишет это тезисно, как ориентир, а не жёсткий список.</p>
+
+  <div class="warn">
+    <div class="lbl">Открытый вопрос</div>
+    <p style="margin:0">Размер и расстановку фотозон нужно регламентировать: в прошлые годы
+      зоны соседних общин стояли слишком тесно (упомянули соседство якутской и мордовской),
+      и фотографу было некуда отойти, чтобы снять лица. Площадку <b>завтра (после записи,
+      то есть ориентировочно 9 октября) измерит Алёна</b> — она отвечает за то, чтобы каждой
+      общине было одинаково удобно, без привязки к своей общине. Предварительный ориентир
+      по глубине зоны, который прозвучал, — около <b>2–2,5 метров</b>, чтобы в кадр
+      помещалось лицо человека.</p>
+  </div>
+
+  <h3>Гала-концерт</h3>
+  <p>Общий сценарий и постановку номеров делает приглашённый профессионал — он же даёт
+    каждой общине «наряд-задание» (постановку номера). Договорились не пропускать репетиции
+    и заранее сообщать о технических нуждах номера:</p>
+  <ul>
+    <li>музыкальное сопровождение — заранее передать фонограмму или заявку на запись;</li>
+    <li>элементы костюма, которые может дать Дворец культуры (например, балетки) —
+      заранее уточнить у ответственного, что есть в наличии;</li>
+    <li>контрамарки на вход для национальных объединений дадут как поощрение —
+      по своему усмотрению раздаёт сама община.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">6</span>Награды главы посёлка</h2>
+  <p>Ежегодная традиция: в честь Дня народного единства глава посёлка учреждает систему
+    поощрения. Советам/правлениям общин нужно подготовить и подать кандидатов.</p>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Награда</th><th>Что даёт</th><th>Как часто</th></tr>
+    <tr>
+      <td class="b">Почётная грамота главы</td>
+      <td>10 000 ₽ денежной выплаты + ценный подарок</td>
+      <td>одному человеку — не чаще раза в 3 года</td>
+    </tr>
+    <tr>
+      <td class="b">Благодарственное письмо</td>
+      <td>сопровождается ценным подарком</td>
+      <td>без ограничения по частоте</td>
+    </tr>
+    <tr>
+      <td class="b">Призы фестиваля спорта</td>
+      <td>денежные призы по видам/местам</td>
+      <td>ежегодно</td>
+    </tr>
+    <tr>
+      <td class="b">Конкурс фотозон</td>
+      <td>призовой фонд: 1, 2, 3 место + ежегодные дополнительные денежные призы</td>
+      <td>ежегодно — «никто не уходит с нулём»</td>
+    </tr>
+    <tr>
+      <td class="b">«Код единения» (закрытие года)</td>
+      <td>отдельная система поощрения по номинациям — подробности позже</td>
+      <td>новое в этом году</td>
+    </tr>
+  </table>
+  </div>
+  <p>Кто получит какую награду — решает <b>наградная комиссия</b>, она же разбирает спорные
+    и дополнительные вопросы. Все номинации в этом году денежные — в администрации сказали,
+    что по национальным объединениям в этом году выделили максимум, что было возможно,
+    как задел на будущее.</p>
+  <div class="warn">
+    <div class="lbl">Срок</div>
+    <p style="margin:0"><b>До конца следующей недели</b> каждая община подаёт
+      <b>одного кандидата</b> на награждение — в личном сообщении <span class="tag ask">кому именно — уточнить</span>.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">7</span>Открытые вопросы — кто ждёт ответа</h2>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Вопрос</th><th>Кто решает / ждёт</th><th>Срок</th></tr>
+    <tr>
+      <td>Точное время соревнований и тренеры по каждому виду спорта</td>
+      <td>положение пришлют отдельно <span class="tag ask">кто готовит — уточнить</span></td>
+      <td>не названо</td>
+    </tr>
+    <tr>
+      <td>Расписание тренировок по залам</td>
+      <td>Кирилл Николаевич</td>
+      <td>не названо</td>
+    </tr>
+    <tr>
+      <td>Формат «весёлых стартов»</td>
+      <td>главный судья + тренерский состав</td>
+      <td>до фестиваля</td>
+    </tr>
+    <tr>
+      <td>Замер и регламент фотозон по общинам</td>
+      <td>Алёна (выезд на площадку)</td>
+      <td><span class="tag ok">ориентировочно 9 октября</span></td>
+    </tr>
+    <tr>
+      <td>Кандидаты на награды главы посёлка — по одному от общины</td>
+      <td>советы/правления общин</td>
+      <td><span class="tag ask">до конца следующей недели</span></td>
+    </tr>
+    <tr>
+      <td>Положение по номинациям «Код единения»</td>
+      <td>администрация — доведут до общин</td>
+      <td>не названо</td>
+    </tr>
+    <tr>
+      <td>Музыкальное сопровождение и костюмные элементы для номеров гала-концерта</td>
+      <td>каждая община — передать ответственному заранее</td>
+      <td>до репетиций</td>
+    </tr>
+  </table>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Источник: две аудиозаписи собрания общин в администрации Айхала, 8 октября 2026
+      (≈29 и ≈19 минут), расшифрованы локально (без передачи в облако).</p>
+    <p>Часть фраз на записи перекрывалась одновременной речью нескольких человек — там,
+      где смысл не удалось восстановить точно, в брифе стоит пометка
+      <span class="tag ask">уточнить</span> вместо предположения.</p>
+    <p>Подготовил Джарвис · 8 октября 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
